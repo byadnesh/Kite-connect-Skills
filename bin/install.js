@@ -6,7 +6,7 @@
 const { spawnSync } = require('child_process');
 
 const REPO = 'byadnesh/Kite-Skills';
-const SKILLS = ['kite-connect', 'kite-options', 'kite-backtest'];
+const SKILLS = ['kite-connect', 'kite-options', 'kite-backtest', 'kite-websocket'];
 const args = process.argv.slice(2);
 
 if (args.includes('--help') || args.includes('-h')) {

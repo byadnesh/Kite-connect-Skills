@@ -14,8 +14,8 @@ def frontmatter(text):
 
 
 class RepoTests(unittest.TestCase):
-    def test_three_skills(self):
-        self.assertEqual([p.name for p in SKILL_DIRS], ["kite-backtest", "kite-connect", "kite-options"])
+    def test_four_skills(self):
+        self.assertEqual([p.name for p in SKILL_DIRS], ["kite-backtest", "kite-connect", "kite-options", "kite-websocket"])
 
     def test_frontmatter(self):
         for d in SKILL_DIRS:
@@ -37,9 +37,9 @@ class RepoTests(unittest.TestCase):
                 self.assertTrue((md.parent / target).exists(), f"{md.relative_to(ROOT)} → {target}")
 
     def test_shared_bootstrap_in_sync(self):
-        a = (SKILLS / "kite-options" / "scripts" / "kite_common.py").read_bytes()
-        b = (SKILLS / "kite-backtest" / "scripts" / "kite_common.py").read_bytes()
-        self.assertEqual(a, b, "kite_common.py copies diverged — keep them byte-identical")
+        copies = {s: (SKILLS / s / "scripts" / "kite_common.py").read_bytes()
+                  for s in ("kite-options", "kite-backtest", "kite-websocket")}
+        self.assertEqual(len(set(copies.values())), 1, "kite_common.py copies diverged — keep them byte-identical")
 
     def test_no_hardcoded_credentials(self):
         pattern = re.compile(r"(api_secret|access_token|api_key)\s*=\s*['\"][A-Za-z0-9]{12,}['\"]")

@@ -94,11 +94,11 @@ ask the user to paste their Zerodha password, PIN or TOTP seed into the chat.
 
 | Capability | Personal (free) | Connect (₹500/mo per app) |
 |---|:-:|:-:|
-| Orders, GTT, alerts, MF | ✅ | ✅ |
-| Holdings, positions, margins, charges | ✅ | ✅ |
-| `ltp` / `ohlc` / `quote` | ❌ | ✅ |
-| `historical_data` | ❌ | ✅ (included since Feb 2025) |
-| WebSocket ticks (`KiteTicker`) | ❌ | ✅ |
+| Orders, GTT, alerts, MF | Yes | Yes |
+| Holdings, positions, margins, charges | Yes | Yes |
+| `ltp` / `ohlc` / `quote` | No | Yes |
+| `historical_data` | No | Yes (included since Feb 2025) |
+| WebSocket ticks (`KiteTicker`) | No | Yes |
 
 If a data call fails with a permission error, the user is on the Personal plan — tell them, don't retry.
 
@@ -284,11 +284,12 @@ the NSE holiday list when it matters.
 | Funds, order/basket margins, contract-note charges | [references/margins-and-charges.md](references/margins-and-charges.md) |
 | LTP / OHLC / quote / historical candles | [references/market-data.md](references/market-data.md) |
 | Instruments dump, symbol formats, index tokens | [references/instruments.md](references/instruments.md) |
-| KiteTicker, modes, tick schema, order updates | [references/websocket.md](references/websocket.md) |
+| KiteTicker quick start (full streaming toolkit: **kite-websocket** skill) | [references/websocket.md](references/websocket.md) |
 | Mutual funds and SIPs | [references/mutual-funds.md](references/mutual-funds.md) |
 | Exceptions, HTTP codes, retry policy | [references/errors-and-limits.md](references/errors-and-limits.md) |
 | SEBI 2026 retail-algo rules, static IP | [references/compliance.md](references/compliance.md) |
 | Multi-step workflows (rebalance, bracket-like exits, EOD report) | [references/common-workflows.md](references/common-workflows.md) |
 
 Related skills in this repo: **kite-options** (option chain, Greeks, strategies — Kite has no option-chain
-endpoint) and **kite-backtest** (historical data + Zerodha cost model).
+endpoint), **kite-backtest** (historical data + Zerodha cost model) and **kite-websocket** (production-grade
+streaming: thread-safe `TickStream`, live candles, tick recording, order-update monitor).

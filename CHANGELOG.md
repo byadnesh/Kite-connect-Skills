@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.1.0] — 2026-10-19
+
+### Added
+- `kite-websocket` skill: `TickStream` (thread-safe subscriptions via the Twisted reactor, sharding over
+  3 connections × 3,000 tokens, bounded drop-oldest queue, latest snapshot, de-duplicated order
+  updates, health/stale checks), `BarBuilder` (session-anchored live candles with cumulative-volume
+  diffing), `TickRecorder` (daily JSONL), IST timestamp fixes, 4 reference docs and 5 examples.
+- `resolve_instrument()` in the shared `kite_common.py`.
+- README redesign: Kite mark logo (vector, transparent), animated SVG header, ticker and safety-flow
+  diagrams; emojis removed.
+
 ## [1.0.0] — 2026-10-19
 
 ### Added

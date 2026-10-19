@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 10" width="900" height="10" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="beam" x1="0" x2="1">
+      <stop offset="0" stop-color="#F6461A" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FF7A45"/>
+      <stop offset="1" stop-color="#DA3530" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .beam { animation: sweep 4.5s ease-in-out infinite; }
+    @keyframes sweep { from { transform: translateX(-220px); } to { transform: translateX(900px); } }
+    @media (prefers-reduced-motion: reduce) { .beam { animation: none; transform: translateX(340px); } }
+  </style>
+  <rect x="0" y="4" width="900" height="2" rx="1" fill="#F6461A" fill-opacity="0.25"/>
+  <rect class="beam" x="0" y="3" width="220" height="4" rx="2" fill="url(#beam)"/>
+</svg>

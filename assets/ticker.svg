@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40" width="900" height="40" role="img" aria-label="kite-connect, kite-options, kite-websocket, kite-backtest">
+  <title>kite-connect · kite-options · kite-websocket · kite-backtest</title>
+  <defs>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.08" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.92" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="edges"><rect width="900" height="40" fill="url(#fade)"/></mask>
+  </defs>
+  <style>
+    text { font-family: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace; font-size: 15px; fill: #6E7781; }
+    .k { fill: #F6461A; font-weight: 700; }
+    .s { fill: #DA3530; }
+    .track { animation: scroll 36s linear infinite; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-1600px); } }
+    @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+  </style>
+  <line x1="0" y1="0.5" x2="900" y2="0.5" stroke="#F6461A" stroke-opacity="0.35"/>
+  <line x1="0" y1="39.5" x2="900" y2="39.5" stroke="#F6461A" stroke-opacity="0.35"/>
+  <g mask="url(#edges)">
+    <g class="track">
+      <text x="0" y="25" textLength="1600" lengthAdjust="spacing"><tspan class="k">kite-connect</tspan> orders · GTT · alerts · holdings · positions · margins <tspan class="s">/</tspan> <tspan class="k">kite-options</tspan> chains · IV · Greeks · PCR · max pain <tspan class="s">/</tspan> <tspan class="k">kite-websocket</tspan> live ticks · depth · candles · order updates <tspan class="s">/</tspan> <tspan class="k">kite-backtest</tspan> history · Zerodha charges · no look-ahead <tspan class="s">/</tspan></text>
+      <text x="1600" y="25" textLength="1600" lengthAdjust="spacing"><tspan class="k">kite-connect</tspan> orders · GTT · alerts · holdings · positions · margins <tspan class="s">/</tspan> <tspan class="k">kite-options</tspan> chains · IV · Greeks · PCR · max pain <tspan class="s">/</tspan> <tspan class="k">kite-websocket</tspan> live ticks · depth · candles · order updates <tspan class="s">/</tspan> <tspan class="k">kite-backtest</tspan> history · Zerodha charges · no look-ahead <tspan class="s">/</tspan></text>
+    </g>
+  </g>
+</svg>

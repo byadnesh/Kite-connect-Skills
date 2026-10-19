@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 150" width="900" height="150" role="img" aria-label="Order flow: prompt, resolve, validate, preview, you confirm, place, verify and journal">
+  <title>Every order: prompt → resolve → validate → preview → you confirm → place → verify + journal</title>
+  <style>
+    text { font-family: "Segoe UI", -apple-system, Helvetica, Arial, sans-serif; text-anchor: middle; }
+    .lbl { font-size: 14px; font-weight: 700; fill: #6E7781; }
+    .sub { font-size: 11px; fill: #6E7781; font-family: ui-monospace, Consolas, Menlo, monospace; }
+    .box { fill: none; stroke: #6E7781; stroke-width: 1.5; }
+    .gate .box { stroke: #F6461A; stroke-width: 2.5; }
+    .gate .lbl { fill: #F6461A; }
+    .wire { stroke: #6E7781; stroke-width: 1.5; stroke-dasharray: 4 5; animation: flow 1s linear infinite; }
+    .cap { font-size: 12px; fill: #6E7781; }
+    .node .box { animation: lit 7s linear infinite both; }
+    /* delays match the pulse: it reaches each node, waits at "You confirm", then continues */
+    .n1 .box { animation-delay: 0s; }     .n2 .box { animation-delay: 0.79s; }
+    .n3 .box { animation-delay: 1.58s; }  .n4 .box { animation-delay: 2.36s; }
+    .n6 .box { animation-delay: 5.57s; }  .n7 .box { animation-delay: 6.9s; }
+    .gate .box { animation: gate 7s ease-in-out 3.15s infinite both; }
+    @keyframes lit  { 0%, 14% { stroke: #F6461A; } 15%, 100% { } }
+    @keyframes gate { 0%, 14% { fill: #F6461A; fill-opacity: .14; } 15%, 100% { fill-opacity: 0; } }
+    @keyframes flow { to { stroke-dashoffset: -9; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .pulse { display: none; } }
+  </style>
+
+  <line class="wire" x1="70" y1="62" x2="830" y2="62"/>
+
+  <g class="node n1"><rect class="box" x="10" y="35" width="112" height="54" rx="10"/><text class="lbl" x="66" y="60">Prompt</text><text class="sub" x="66" y="77">your words</text></g>
+  <g class="node n2"><rect class="box" x="136" y="35" width="112" height="54" rx="10"/><text class="lbl" x="192" y="60">Resolve</text><text class="sub" x="192" y="77">instruments.py</text></g>
+  <g class="node n3"><rect class="box" x="262" y="35" width="112" height="54" rx="10"/><text class="lbl" x="318" y="60">Validate</text><text class="sub" x="318" y="77">validate_order</text></g>
+  <g class="node n4"><rect class="box" x="388" y="35" width="112" height="54" rx="10"/><text class="lbl" x="444" y="60">Preview</text><text class="sub" x="444" y="77">order ticket</text></g>
+  <g class="gate"><rect class="box" x="514" y="35" width="112" height="54" rx="10"/><text class="lbl" x="570" y="60">You confirm</text><text class="sub" x="570" y="77">explicit "yes"</text></g>
+  <g class="node n6"><rect class="box" x="640" y="35" width="112" height="54" rx="10"/><text class="lbl" x="696" y="60">Place</text><text class="sub" x="696" y="77">kiteconnect</text></g>
+  <g class="node n7"><rect class="box" x="766" y="35" width="124" height="54" rx="10"/><text class="lbl" x="828" y="60">Verify + log</text><text class="sub" x="828" y="77">order_history</text></g>
+
+  <circle class="pulse" r="6" fill="#F6461A">
+    <animateMotion dur="7s" repeatCount="indefinite" path="M66,26 L828,26" keyPoints="0;0.661;0.661;1" keyTimes="0;0.45;0.6;1" calcMode="linear"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <text class="cap" x="450" y="122">Nothing reaches the exchange until you approve the exact ticket. One approval covers one action.</text>
+</svg>

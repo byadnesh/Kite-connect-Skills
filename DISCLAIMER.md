@@ -4,8 +4,9 @@
 
 1. **No affiliation.** This project is not created, sponsored, endorsed, reviewed or supported by
    Zerodha Broking Ltd., Zerodha Technology Pvt. Ltd., Rainmatter, NSE, BSE, MCX, SEBI or any other
-   exchange, regulator or broker. "Zerodha", "Kite", "Kite Connect" and related marks belong to their
-   respective owners and are used only to describe compatibility with a public API.
+   exchange, regulator or broker. "Zerodha", "Kite", "Kite Connect", the Kite logo and related marks
+   belong to their respective owners and are used only to describe compatibility with a public API.
+   The MIT license of this repository does not cover those marks.
 
 2. **Not investment advice.** Nothing in this repository, including its skills, references, scripts,
    examples, option analytics or backtest output, is investment, financial, legal or tax advice or a

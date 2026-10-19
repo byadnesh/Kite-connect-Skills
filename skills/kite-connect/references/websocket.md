@@ -1,5 +1,8 @@
 # WebSocket Streaming (KiteTicker)
 
+> Quick start only. For anything long-running — thread-safe subscriptions, > 3,000 instruments, live
+> candles, tick recording, reconnect/stale-feed handling — use the **kite-websocket** skill.
+
 Needs the Connect plan. Endpoint: `wss://ws.kite.trade?api_key=...&access_token=...`.
 
 | Limit | Value |

@@ -1,4 +1,4 @@
-"""Minimal Kite bootstrap shared by the kite-options and kite-backtest skills.
+"""Minimal Kite bootstrap shared by the kite-options, kite-backtest and kite-websocket skills.
 
 UNOFFICIAL — not affiliated with Zerodha.
 
@@ -92,4 +92,22 @@ def find_equity_token(kite, symbol: str, exchange: str = "NSE") -> int:
     for r in load_instruments(kite, exchange):
         if r["tradingsymbol"] == symbol:
             return r["instrument_token"]
+    raise LookupError(f"{exchange}:{symbol} not in instruments dump")
+
+
+def resolve_instrument(kite, spec: str) -> dict[str, Any]:
+    """'NSE:INFY', 'INFY' (NSE), 'NFO:NIFTY26OCTFUT', 'BSE:SENSEX' or a numeric token -> instrument row."""
+    spec = spec.strip()
+    if spec.isdigit():
+        token = int(spec)
+        for exch in ("NSE", "BSE", "NFO", "BFO", "MCX", "CDS", "BCD"):
+            for r in load_instruments(kite, exch):
+                if r["instrument_token"] == token:
+                    return r
+        raise LookupError(f"instrument_token {token} not found")
+    exchange, _, symbol = spec.rpartition(":")
+    exchange, symbol = (exchange or "NSE").upper(), symbol.upper()
+    for r in load_instruments(kite, exchange):
+        if r["tradingsymbol"] == symbol:
+            return r
     raise LookupError(f"{exchange}:{symbol} not in instruments dump")

@@ -4,19 +4,20 @@
     "name": "byadnesh"
   },
   "metadata": {
-    "description": "UNOFFICIAL Zerodha Kite Connect skills: trading, portfolio, market data, options analytics and backtesting for Indian markets. Not affiliated with Zerodha.",
-    "version": "1.0.0"
+    "description": "UNOFFICIAL Zerodha Kite Connect skills: trading, portfolio, market data, options analytics, live streaming and backtesting for Indian markets. Not affiliated with Zerodha.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "kite-skills",
-      "description": "UNOFFICIAL Zerodha Kite Connect skills for Indian markets (NSE/BSE/NFO/MCX): orders with guardrails, portfolio, quotes, history, WebSocket, option chains with Greeks, and backtesting with Zerodha charges.",
+      "description": "UNOFFICIAL Zerodha Kite Connect skills for Indian markets (NSE/BSE/NFO/MCX): orders with guardrails, portfolio, quotes, history, live WebSocket streaming and candles, option chains with Greeks, and backtesting with Zerodha charges.",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/kite-connect",
         "./skills/kite-options",
-        "./skills/kite-backtest"
+        "./skills/kite-backtest",
+        "./skills/kite-websocket"
       ]
     }
   ]
