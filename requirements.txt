@@ -1,0 +1,4 @@
+# Runtime (the helper scripts themselves are standard-library only)
+kiteconnect>=5.0
+# Optional, for DataFrame analysis in kite-backtest
+pandas>=1.5

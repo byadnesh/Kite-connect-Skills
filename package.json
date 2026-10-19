@@ -1,0 +1,44 @@
+{
+  "name": "@byadnesh/kite-skills",
+  "version": "1.0.0",
+  "description": "UNOFFICIAL Zerodha Kite Connect agent skills for Claude Code, Codex and Agent Skills-compatible agents: orders, portfolio, market data, option chains with Greeks, and backtesting with Zerodha charges.",
+  "keywords": [
+    "zerodha",
+    "kite",
+    "kiteconnect",
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "trading",
+    "nse",
+    "bse",
+    "options",
+    "backtesting",
+    "india"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byadnesh/Kite-Skills.git"
+  },
+  "homepage": "https://github.com/byadnesh/Kite-Skills#readme",
+  "bugs": {
+    "url": "https://github.com/byadnesh/Kite-Skills/issues"
+  },
+  "bin": {
+    "kite-skills": "./bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "README.md",
+    "DISCLAIMER.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node bin/install.js --help && python -m unittest discover -s tests"
+  }
+}
